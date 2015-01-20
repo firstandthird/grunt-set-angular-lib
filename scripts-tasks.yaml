@@ -1,5 +1,6 @@
 aliases:
   - 'jshint:lib'
+  - 'jscs'
   - 'clean'
   - 'concat'
   - 'mocha'
@@ -27,6 +28,10 @@ mocha:
     reporter: 'Spec'
   all:
     src: 'test/index.html'
+jscs:
+  src: '<%= jshint.lib %>'
+  options:
+    config: 'node_modules/grunt-set-angular-lib/node_modules/ft-jscs/jscs.json'
 uglify:
   options:
     banner: '<%= meta.banner %>'
