@@ -1,0 +1,39 @@
+aliases:
+  - 'jshint:lib'
+  - 'clean'
+  - 'concat'
+  - 'mocha'
+clean:
+  - '<%= dist %>/*'
+concat:
+  src:
+    - 'lib/<%= name %>.js'
+  dest: 'dist/<%= name %>.js'
+concat__full:
+  src:
+    - '<%= dist %>/bower.js'
+    - 'lib/<%= name %>.js'
+  dest: 'dist/<%= name %>.full.js'
+bower:
+  dest: '<%= dist %>/bower.js'
+  additionalDeps: <%= bowerDeps %>
+  exclude:
+    - 'jquery'
+    - 'angular'
+mocha:
+  options:
+    run: true
+    growl: true
+    reporter: 'Spec'
+  all:
+    src: 'test/index.html'
+uglify:
+  options:
+    banner: '<%= meta.banner %>'
+  src: 'dist/<%= name %>.js'
+  dest: 'dist/<%= name %>.min.js'
+uglify__full:
+  options:
+    banner: '<%= meta.banner %>'
+  src: 'dist/<%= name %>.full.js'
+  dest: 'dist/<%= name %>.full.min.js'
