@@ -2,6 +2,6 @@ build:
   - 'Gruntfile.js'
   - 'bower.json'
 lib:
-  - 'lib/**/*.js'
+  - '<%= dev %>/**/*.js'
 test:
   - 'test/*.js'

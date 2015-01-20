@@ -7,13 +7,13 @@ clean:
   - '<%= dist %>/*'
 concat:
   src:
-    - 'lib/<%= name %>.js'
-  dest: 'dist/<%= name %>.js'
+    - '<%= dev %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.js'
 concat__full:
   src:
     - '<%= dist %>/bower.js'
-    - 'lib/<%= name %>.js'
-  dest: 'dist/<%= name %>.full.js'
+    - '<%= dev %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.full.js'
 bower:
   dest: '<%= dist %>/bower.js'
   additionalDeps: <%= bowerDeps %>
@@ -30,10 +30,10 @@ mocha:
 uglify:
   options:
     banner: '<%= meta.banner %>'
-  src: 'dist/<%= name %>.js'
-  dest: 'dist/<%= name %>.min.js'
+  src: '<%= dist %>/<%= package.name %>.js'
+  dest: '<%= dist %>/<%= package.name %>.min.js'
 uglify__full:
   options:
     banner: '<%= meta.banner %>'
-  src: 'dist/<%= name %>.full.js'
-  dest: 'dist/<%= name %>.full.min.js'
+  src: '<%= dist %>/<%= package.name %>.full.js'
+  dest: '<%= dist %>/<%= package.name %>.full.min.js'

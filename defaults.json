@@ -1,4 +1,4 @@
 {
-  "dev": "dev",
-  "dist": "lib"
+  "dev": "lib",
+  "dist": "dist"
 }
